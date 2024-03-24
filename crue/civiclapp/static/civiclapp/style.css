@@ -1,0 +1,168 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #000000;
+  }
+  
+  .swiper-pagination {
+    height: 60px; 
+  }
+
+  .swiper-pagination-bullet {
+    width: 20px; /* Largeur du point */
+    height: 20px; /* Hauteur du point */
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #e9ff42;
+  }
+
+
+  .conteneur {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100%;
+}
+
+.conteneur-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #1c6888;
+}
+
+
+.svg-circle {
+  position: absolute;
+  top: 50%; /* Ajustez ces valeurs pour positionner le cercle comme vous le souhaitez */
+  left: 50%; /* Ajustez ces valeurs pour positionner le cercle comme vous le souhaitez */
+  z-index: 10; /* Assurez-vous que le SVG est au-dessus de l'image */
+}
+
+img {
+  display: block; /* Pour éviter l'espace en dessous de l'image */
+  width: auto; /* Ajustez selon le besoin */
+  height: 100%; /* Pour maintenir le ratio de l'image */
+  background-color: #1c6888;
+  position: relative;
+  z-index: 1;
+}
+
+.image-page_2_1 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 30%;
+  left: 55%;
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  width: 50%; /* Ajustez selon le besoin */
+  height: 50%; /* Pour maintenir le ratio de l'image */
+} 
+
+.image-page_2_2 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 20%;
+  left: 40%;
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  width: 50%; /* Ajustez selon le besoin */
+  height: 50%; /* Pour maintenir le ratio de l'image */
+} 
+
+.image-page_2_3 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 48%;
+  left: 48%;
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+
+} 
+
+.text-page_2_1 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 15%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 70px;
+}
+
+.text-page_2_2 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 85%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 40px;
+}
+
+.text-page_3_1 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 15%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 70px;
+}
+
+.text-page_3_2 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 35%; /* Centré verticalement */
+  left: 43%; /* Centré horizontalement */
+  text-align: center;
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 30px;
+}
+
+.text-page_3_3 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  text-align: center;
+  top: 35%; /* Centré verticalement */
+  left: 58%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 30px;
+}
+
+.text-page_3_4 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  text-align: center;
+  top: 80%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 15px;
+}
+
+.image-page_3_1 {
+  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  width: 20%; /* Ajustez selon le besoin */
+  height: 27%; /* Pour maintenir le ratio de l'image */
+}
+
+/* Slider before after image */

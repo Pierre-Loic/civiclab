@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_5.png' %}');">
+    <div class="container-fluid d-flex flex-column">
+        <div class="row double-height">
+        </div>
+        <div class="row double-height">
+            <a href="{% url 'carte_mobile' %}">
+                <svg width="100vw" height="100vw" class="svg-circle">
+                <circle cx="70" cy="70" r="70" fill="#2d5974" />
+                <text x="70" y="55" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">AILLEURS</text>
+                <text x="70" y="75" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">DANS LA</text>
+                <text x="70" y="95" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">METRO</text>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🏄 CivicLab 2023/2024 - repères de crues augmentés</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'civiclapp/style_responsive.css' %}">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+<!-- Swiper -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_1.png' %}');" >
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_2.png' %}');">
+          <div class="text-page_2_1">L'isère en Live</div>
+          <div class="image-page_2_1">
+            {% include "civiclapp/vigicrue.html" with data=data %}
+          </div>
+          <div class="image-page_2_2">
+            {% include "civiclapp/hauteur.html" %}
+          </div>
+          <div class="image-page_2_3">
+            {% include "civiclapp/debit.html" %}
+          </div>
+          <div class="text-page_2_2">Vous êtes curieux ? 👉</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_3.png' %}');">
+          <div class="text-page_3_1">Crue du pont<br>Saint-Laurent</div>
+          <div class="text-page_3_2">Scénario<br>habituel<br>👇</div>
+          <div class="text-page_3_3">Crue<br>historique<br>👇</div>
+          <iframe class="image-page_3_1" src="{% url 'slider' %}"></iframe>
+          <div class="text-page_3_4">ℹ️ La photo de la crue a été créée par intelligence artificielle</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_4.png' %}');">
+          <div>{{ data_repere.presentation_crue }}</div>
+          <img src="{{ data_repere.photo1 }}" alt="Photo 1" />
+          <iframe width="300" height="150" src="{{ data_repere.video1 }}" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_5.png' %}');">
+          <a href="{% url 'carte' %}">
+            <svg width="300" height="300" class="svg-circle">
+              <circle cx="70" cy="70" r="70" fill="#2d5974" />
+              <text x="70" y="55" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">AILLEURS</text>
+              <text x="70" y="75" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">DANS LA</text>
+              <text x="70" y="95" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">METRO</text>
+            </svg>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  
+  <script>
+    var swiper = new Swiper('.mySwiper', {
+        direction: 'horizontal',
+        autoplay: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+  </script>
+</body>
+</html>

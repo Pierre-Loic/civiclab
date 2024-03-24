@@ -1,0 +1,44 @@
+[{
+    "niveau_alerte" : 1,
+    "time" : "2s",
+    "main_color" : "#28d761",
+    "color_4" : "#504d49",
+    "color_3" : "#504d49",
+    "color_2" : "#504d49",
+    "color_1" : "#28d761",
+    "text" : "Pas de vigilance particulière requise",
+    "full_text" : "Pas de vigilance particulière requise"
+},
+{
+    "niveau_alerte" : 2,
+    "time" : "1s",
+    "main_color" : "#ff0",
+    "color_4" : "#504d49",
+    "color_3" : "#504d49",
+    "color_2" : "#ff0",
+    "color_1" : "#504d49",
+    "text" : "Risque de crue génératrice de débordements",
+    "full_text" : "Risque de crue génératrice de débordements et de dommages localisés ou de montée rapide et dangereuse des eaux, nécessitant une vigilance particulière notamment dans le cas d'activités exposées et/ou saisonnières"
+},
+{
+    "niveau_alerte" : 3,
+    "time" : "0.4s",
+    "main_color" : "#fa0",
+    "color_4" : "#504d49",
+    "color_3" : "#fa0",
+    "color_2" : "#504d49",
+    "color_1" : "#504d49",
+    "text" : "Risque de crue génératrice de débordements importants",
+    "full_text" : "Risque de crue génératrice de débordements importants susceptibles d’avoir un impact significatif sur la vie collective et la sécurité des biens et des personnes"
+},
+{
+    "niveau_alerte" : 4,
+    "time" : "0.2s",
+    "main_color" : "red",
+    "color_4" : "red",
+    "color_3" : "#504d49",
+    "color_2" : "#504d49",
+    "color_1" : "#504d49",
+    "text" : "Risque de crue majeure",
+    "full_text" : "Risque de crue majeure. Menace directe et généralisée de la sécurité des personnes et des biens"
+}]

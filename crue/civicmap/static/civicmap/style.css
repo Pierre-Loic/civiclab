@@ -1,0 +1,33 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+#carte {
+    height: 100%;
+    width: 100%;
+}
+
+
+#conteneur-carte {
+    position: relative;
+    height: 100%; 
+    width: 100%;
+}
+
+#carte {
+    height: 100%; 
+    width: 100%;
+}
+
+#titre {
+    position: absolute; /* Positionne le titre de manière absolue par rapport à son conteneur */
+    top: 10px; /* Distance du haut du conteneur */
+    left: 50%; /* Centre le titre horizontalement */
+    transform: translateX(-50%); /* Ajuste le centrage en déplaçant le titre de 50% de sa propre largeur vers la gauche */
+    background-color: rgba(28, 104, 136, 0.75); /* Fond semi-transparent */
+    padding: 5px 10px; /* Espacement intérieur */
+    border-radius: 5px; /* Bords arrondis */
+    z-index: 1000; /* S'assure que le titre est au-dessus de tout autre contenu de la carte */
+    text-align: center;
+    color: #e9ff42;
+}

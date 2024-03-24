@@ -1,0 +1,62 @@
+[
+    {
+        "code": "W141001001",
+        "nom": "Grenoble [Bastille]",
+        "riviere": "Isère",
+        "hauteur_max": 3.46,
+        "debit_max": 1040.0,
+        "date_max": "2023-11-15",
+        "niveau_alerte": 1,
+        "date_alerte": "2024-03-12",
+        "latitude": 45.192991183781324,
+        "longitude": 5.724998278575392
+    },
+    {
+        "code": "W283201001",
+        "nom": "Pont-de-Claix",
+        "riviere": "Drac",
+        "hauteur_max": null,
+        "debit_max": null,
+        "date_max": null,
+        "niveau_alerte": 1,
+        "date_alerte": "2024-03-12",
+        "latitude": 45.119740147548065,
+        "longitude": 5.697006877181786
+    },
+    {
+        "code": "W276721401",
+        "nom": "Notre-Dame-de-Mésage",
+        "riviere": "Romanche",
+        "hauteur_max": 3.19,
+        "debit_max": 222.0,
+        "date_max": "2023-10-20",
+        "niveau_alerte": 1,
+        "date_alerte": "2024-03-12",
+        "latitude": 45.077062676911254,
+        "longitude": 5.765024079774936
+    },
+    {
+        "code": "W276721102",
+        "nom": "Livet-et-Gavet [Champeau] [DREAL]",
+        "riviere": "Romanche",
+        "hauteur_max": null,
+        "debit_max": null,
+        "date_max": null,
+        "niveau_alerte": 1,
+        "date_alerte": "2024-03-12",
+        "latitude": 45.117701173756096,
+        "longitude": 5.9774906875931695
+    },
+    {
+        "code": "W141001201",
+        "nom": "Domène",
+        "riviere": "Ruisseau du Domènon",
+        "hauteur_max": null,
+        "debit_max": null,
+        "date_max": null,
+        "niveau_alerte": 1,
+        "date_alerte": "2024-03-12",
+        "latitude": 45.202204351688614,
+        "longitude": 5.837266951070279
+    }
+]

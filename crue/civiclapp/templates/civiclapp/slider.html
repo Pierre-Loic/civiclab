@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{% static 'civiclapp/style_slider.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <div class="before-after-slider">
+        <img src="{% static 'civiclapp/image-avant.jpg' %}" alt="Avant" class="before-image">
+        <div class="slider">
+            <div class="drag-line">
+                <span class="drag-handle">🏄</span>
+            </div>
+        </div>
+        <img src="{% static 'civiclapp/image-apres.png' %}" alt="Après" class="after-image">
+    </div>
+</div>
+
+<script src="{% static 'civiclapp/script_slider.js' %}"></script>
+</body>
+</html>

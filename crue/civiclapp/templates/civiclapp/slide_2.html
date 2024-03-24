@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_2.png' %}');">
+
+<div class="container-fluid d-flex flex-column full-height">
+    <!-- Ligne 1 -->
+    <div class="row flex-grow-05">
+        <div class="col-12 p-3 text-page_2_1">L'isère en Live</div>
+    </div>
+    <!-- Lignes 2, 3, et 4 -->
+    <div class="row double-height">
+        <div class="col-6 d-flex flex-column">
+            <!-- Bloc de gauche, toute la hauteur pour les lignes 2, 3, et 4 -->
+            <div class="p-3 full-height">
+                {% include "civiclapp/hauteur.html" %}
+            </div>
+        </div>
+        <div class="col-6 d-flex flex-column">
+            <!-- Bloc de droite supérieur, 1 de hauteur -->
+            <div class="p-3 height-1">
+              {% include "civiclapp/vigicrue.html" with data=data %}
+            </div>
+            <!-- Bloc de droite inférieur, 2 de hauteur -->
+            <div class="p-3 height-2 flex-grow-1">
+                {% include "civiclapp/debit.html" %}
+            </div>
+        </div>
+    </div>
+    <!-- Ligne 5 -->
+    <div class="row flex-grow-05">
+        <div class="col-12 p-3 text-page_2_2">Vous êtes curieux ? 👉</div>
+    </div>
+</div>
+</div>

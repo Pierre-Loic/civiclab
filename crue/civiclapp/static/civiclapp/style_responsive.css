@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Empêche le défilement */
+}
+
+/* Swiper */
+.swiper-pagination {
+  height: 60px; 
+}
+
+.swiper-pagination-bullet {
+  width: 20px; /* Largeur du point */
+  height: 20px; /* Hauteur du point */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #e9ff42;
+}
+/*-------------------*/
+
+.swiper-slide .conteneur-image {
+  height: 100vh; /* Hauteur totale de la fenêtre de visualisation */
+  width: 100vw; /* Largeur totale de la fenêtre de visualisation */
+  background-size: 100% 100%;
+  background-position: center; /* Centrer l'image de fond */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+}
+
+.conteneur-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.text-page_2_1 {
+  text-align: center;
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 10vw;
+  padding-top: 3vw;
+  grid-column: 1 / 3;
+}
+
+.image-page_2_1 {
+  width: 50%; /* Ajustez selon le besoin */
+  grid-column: 1 / 2;
+} 

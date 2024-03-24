@@ -1,0 +1,54 @@
+{% load static %}
+
+<div class="conteneur-image container-fluid" style="background-image: url('{% static 'civiclapp/page_4.png' %}');overflow-y: auto; max-height: 100vh;">
+    <div class="container-fluid d-flex flex-column">
+        <div class="row">
+            <div class="col-12 titre-page_4_1">
+                LA CARTE D'IDENTITE
+            </div>
+        </div>
+        <div class="row">
+            <img class="image-page_4_1" src="{{ data_repere.photo1 }}" alt="Photo 1" />
+        </div>
+        <div class="row">
+            <div class="col-12 titre-page_4_2">
+                PRESENTATION 👇
+            </div>
+            <div class="col-12 text-page_4_1">
+                {{ data_repere.presentation_crue }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 titre-page_4_2">
+                CONTEXTE 👇
+            </div>
+            <div class="col-12 text-page_4_1">
+                {{ data_repere.contexte }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 titre-page_4_2">
+                IMPACT HUMAIN ET URBAIN 👇
+            </div>
+            <div class="col-12 text-page_4_1">
+                {{ data_repere.impact_humain_urbain }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 titre-page_4_2">
+                PHOTO D'ARCHIVE 👇
+            </div>
+        </div>
+        <div class="row">
+            <img class="image-page_4_1" src="{{ data_repere.photo2 }}" alt="Photo 2" />
+        </div>
+        <div class="row">
+            <div class="col-12 titre-page_4_2">
+                POUR EN SAVOIR PLUS 👇
+            </div>
+            <div class="col-12">
+                <iframe class="image-page_4_1" src="{{ data_repere.video1 }}" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

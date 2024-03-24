@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🏄 CivicLab 2023/2024 - repères de crues augmentés</title>
+    <link rel="stylesheet" href="{% static 'civicmap/style.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <div id="conteneur-carte">
+        <div id="carte"></div>
+        <div id="titre">🏄 Carte des repères de crues et des stations de mesures<br>Grenoble Civiclab 2023/2024</div>
+    </div>
+    
+    
+    <script>
+        var carte = L.map('carte').setView([45.166672, 5.71667], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(carte);
+
+        // Ajouter les stations de mesures sur la carte
+        var stations = JSON.parse('{{stations|safe}}');
+        stations.forEach(function(station) {
+            L.marker([station.fields.latitude, station.fields.longitude]).addTo(carte)
+                .bindPopup(`{% include "civiclapp/vigicrue.html" with data=data %}`);
+        });
+
+        var emojiIcon = L.divIcon({
+            className: 'point',
+            html: '🏄', 
+            iconSize: [10, 10],
+        });
+
+        // Ajouter les repères sur la carte
+        var baseUrl = "{% url 'mobile' num='99999' %}".replace('99999', '').replace('//', '/');
+        console.log(baseUrl);
+        var reperes = JSON.parse('{{reperes|safe}}');
+        reperes.forEach(function(repere) {
+        var marker = L.marker([repere.fields.latitude, repere.fields.longitude], {icon: emojiIcon})
+            .addTo(carte)
+            .on('click', function() {
+                window.location.href = baseUrl + repere.fields.id_gsheet;
+            });
+        });
+    </script>
+</body>
+</html>
