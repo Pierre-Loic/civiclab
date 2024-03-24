@@ -10,7 +10,7 @@ python manage.py collectstatic --noinput
 
 # Remplir la base de données
 python manage.py init_vigicrue
-python manage.py init_stations
+python manage.py init_station
 python manage.py init_reperes_crues
 
 # Mise à jour de données si nécessaire
