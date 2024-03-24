@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - ./crue:/app
+      - static_volume:/app/static
     command: gunicorn crue.wsgi:application --bind 0.0.0.0:8000
     env_file:
       - ./crue/.env
@@ -13,5 +14,6 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - static_volume:/usr/share/nginx/html/static
     depends_on:
       - web
