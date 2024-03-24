@@ -17,3 +17,5 @@ services:
       - static_volume:/usr/share/nginx/html/static
     depends_on:
       - web
+volumes:
+  static_volume:
