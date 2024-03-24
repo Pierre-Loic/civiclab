@@ -18,6 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le reste du code source de l'application dans le conteneur
 COPY . /app
+RUN ls -la /app
 
 # Copier et accorder les permissions d'exécution au script d'entrée
 COPY entrypoint.sh /entrypoint.sh
