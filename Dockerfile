@@ -31,5 +31,8 @@ RUN chmod +x /entrypoint.sh
 # Définir le script d'entrée comme point d'entrée
 ENTRYPOINT ["/entrypoint.sh"]
 
+# Exposer le port sur lequel votre application sera accessible
+EXPOSE 8000
+
 # Commande par défaut pour exécuter l'application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "crue.wsgi:application"]
+CMD ["pipenv", "run", "gunicorn", "--bind", "0.0.0.0:8000", "crue.wsgi:application"]
