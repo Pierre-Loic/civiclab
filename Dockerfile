@@ -4,22 +4,17 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Installer les paquets nécessaires pour pipenv
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends gcc libpq-dev \
-    && pip install --upgrade pip \
-    && pip install pipenv
+# Mettre à jour pip
+RUN pip install --upgrade pip
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copier Pipfile et Pipfile.lock dans le conteneur
-COPY Pipfile Pipfile.lock /app/
+# Copier le fichier requirements.txt dans le conteneur
+COPY requirements.txt /app/
 
-# Installer les dépendances du projet en utilisant pipenv
-# Le drapeau --system installe les paquets dans le système plutôt que dans un environnement virtuel
-# Le drapeau --deploy échouera si le Pipfile.lock est obsolète
-RUN pipenv install --system --deploy
+# Installer les dépendances du projet
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le reste du code source de l'application dans le conteneur
 COPY . /app
@@ -35,4 +30,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 8000
 
 # Commande par défaut pour exécuter l'application
-CMD ["pipenv", "run", "gunicorn", "--bind", "0.0.0.0:8000", "crue.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "crue.wsgi:application"]
