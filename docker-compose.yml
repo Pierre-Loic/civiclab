@@ -4,7 +4,7 @@ services:
     build: .
     volumes:
       - .:/app
-    command: pipenv run gunicorn crue.wsgi:application --bind 0.0.0.0:8000
+    command: pipenv run gunicorn .crue/crue.wsgi:application --bind 0.0.0.0:8000
     env_file:
       - ./crue/.env
   nginx:
