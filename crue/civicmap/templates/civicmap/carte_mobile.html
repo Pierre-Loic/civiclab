@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>🏄 CivicLab 2023/2024 - repères de crues augmentés</title>
+    <title>🏄 MétroSurf 🏄</title>
     <link rel="stylesheet" href="{% static 'civicmap/style.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -11,7 +11,8 @@
 
     <div id="conteneur-carte">
         <div id="carte"></div>
-        <div id="titre">🏄 Carte des repères de crues et des stations de mesures<br>Grenoble Civiclab 2023/2024</div>
+        <div id="titre-mobile">🏄 MétroSurf 🏄<br>Découvrez l’Isère et le Drac comme vous ne les avez jamais vus !</div>
+            <div id="legende">Légende :<br><span style="font-size: 15px;">🔵</span> Station de mesures<br><span style="font-size: 30px;">🏄</span> Repère de crue</div>
     </div>
     
     
@@ -21,17 +22,22 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(carte);
 
+        var vigIcon = L.divIcon({
+            className: 'point',
+            html: '<span style="font-size: 15px;">🔵</span>', 
+        });
+
         // Ajouter les stations de mesures sur la carte
         var stations = JSON.parse('{{stations|safe}}');
         stations.forEach(function(station) {
-            L.marker([station.fields.latitude, station.fields.longitude]).addTo(carte)
-                .bindPopup(`{% include "civiclapp/vigicrue.html" with data=data %}`);
+            L.marker([station.fields.latitude, station.fields.longitude], {icon: vigIcon}).addTo(carte)
+                .bindPopup(`{% include "civiclapp/vigicrue.html" with data=data %}`,
+                );
         });
 
         var emojiIcon = L.divIcon({
             className: 'point',
-            html: '🏄', 
-            iconSize: [10, 10],
+            html: '<span style="font-size: 30px;">🏄</span>',
         });
 
         // Ajouter les repères sur la carte
