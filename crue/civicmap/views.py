@@ -5,9 +5,7 @@ from .models import Station, Vigicrue, RepereCrue
 
 def carte(request):
     reperes = serialize('json', RepereCrue.objects.all(), fields=('id_gsheet', 'latitude', 'longitude'))
-    print(reperes)
     stations = Station.objects.all() 
-
     stations = serialize('json', Station.objects.all())
     data = Vigicrue.objects.get(niveau_alerte=1)
     data_dict = model_to_dict(data)
@@ -15,7 +13,6 @@ def carte(request):
 
 def carte_mobile(request):
     reperes = serialize('json', RepereCrue.objects.all(), fields=('id_gsheet', 'latitude', 'longitude'))
-    print(reperes)
     stations = Station.objects.all() 
 
     stations = serialize('json', Station.objects.all())

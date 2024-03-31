@@ -1,168 +1,144 @@
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #000000;
-  }
-  
-  .swiper-pagination {
-    height: 60px; 
-  }
 
-  .swiper-pagination-bullet {
-    width: 20px; /* Largeur du point */
-    height: 20px; /* Hauteur du point */
-  }
-  
-  .swiper-pagination-bullet-active {
-    background-color: #e9ff42;
-  }
-
-
-  .conteneur {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 100%;
+/* Swiper */
+.swiper {
+  width: auto;
+  height: auto; 
 }
 
-.conteneur-image {
+.swiper-pagination {
+  height: 60px; 
+}
+
+.swiper-pagination-bullet {
+  width: 5vw; /* Largeur du point */
+  height: 4vh; /* Hauteur du point */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #e9ff42;
+}
+
+.swiper-slide .conteneur-image{
+  height: 100vh; /* Hauteur totale de la fenêtre de visualisation */
+  width: 100vw; /* Largeur totale de la fenêtre de visualisation */
+  background-size: 100% 100%;
+  background-position: center; /* Centrer l'image de fond */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+}
+/*-------------------*/
+
+.container-fluid {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
   height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background-color: #1c6888;
+}
+.fill-remaining-space {
+  flex: 1;
+}
+/* Ajustements pour que la troisième ligne prenne deux fois la hauteur des autres */
+.double-height {
+  flex: 2;
 }
 
-
-.svg-circle {
-  position: absolute;
-  top: 50%; /* Ajustez ces valeurs pour positionner le cercle comme vous le souhaitez */
-  left: 50%; /* Ajustez ces valeurs pour positionner le cercle comme vous le souhaitez */
-  z-index: 10; /* Assurez-vous que le SVG est au-dessus de l'image */
+.flex-grow-1 {
+    flex: 1;
+}
+.flex-grow-05 {
+  flex: 0.5;
+}
+/* Styles spécifiques pour les hauteurs des blocs */
+.height-1 { flex: 1; }
+.height-2 { flex: 2; }
+.height-3 { flex: 3; }
+.full-height { height: 100%; }
+.half-height {
+    min-height: 50vh;
 }
 
-img {
-  display: block; /* Pour éviter l'espace en dessous de l'image */
-  width: auto; /* Ajustez selon le besoin */
-  height: 100%; /* Pour maintenir le ratio de l'image */
-  background-color: #1c6888;
-  position: relative;
-  z-index: 1;
-}
-
-.image-page_2_1 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 30%;
-  left: 55%;
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  width: 50%; /* Ajustez selon le besoin */
-  height: 50%; /* Pour maintenir le ratio de l'image */
-} 
-
-.image-page_2_2 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 20%;
-  left: 40%;
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  width: 50%; /* Ajustez selon le besoin */
-  height: 50%; /* Pour maintenir le ratio de l'image */
-} 
-
-.image-page_2_3 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 48%;
-  left: 48%;
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-
-} 
+/* SLIDE N°2 */
 
 .text-page_2_1 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 15%; /* Centré verticalement */
-  left: 50%; /* Centré horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  text-align: center;
   color: #e9ff42; /* Couleur du texte */
   z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  font-size: 70px;
+  font-size: 10vw;
+  padding-top: 3vw;
+  grid-column: 1 / 3;
 }
 
 .text-page_2_2 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 85%; /* Centré verticalement */
-  left: 50%; /* Centré horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  text-align: center;
   color: #e9ff42; /* Couleur du texte */
   z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  font-size: 40px;
-}
+  font-size: 8vw;
+} 
+
+/* SLIDE N°3 */
 
 .text-page_3_1 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 15%; /* Centré verticalement */
-  left: 50%; /* Centré horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
+  text-align: center;
   color: #e9ff42; /* Couleur du texte */
   z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  font-size: 70px;
+  font-size: 8vw;
+}
+
+.text-page_3_1_1 {
+  text-align: center;
+  color: #e9ff42; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 4vw;
 }
 
 .text-page_3_2 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 35%; /* Centré verticalement */
-  left: 43%; /* Centré horizontalement */
   text-align: center;
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
-  color: #e9ff42; /* Couleur du texte */
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  font-size: 30px;
+  color: #e9ff42;
+  z-index: 2;
+  font-size: 5vw;
 }
 
 .text-page_3_3 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
   text-align: center;
-  top: 35%; /* Centré verticalement */
-  left: 58%; /* Centré horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
-  color: #e9ff42; /* Couleur du texte */
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  font-size: 30px;
-}
-
-.text-page_3_4 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  text-align: center;
-  top: 80%; /* Centré verticalement */
-  left: 50%; /* Centré horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
-  color: #e9ff42; /* Couleur du texte */
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  font-size: 15px;
+  color: #e9ff42;
+  z-index: 2;
+  font-size: 4vw;
 }
 
 .image-page_3_1 {
-  position: absolute; /* Modifiez ici pour positionner absolument par rapport à conteneur-image */
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Ajuste le centrage */
-  z-index: 2; /* Assure que le texte est au-dessus de l'image */
-  width: 20%; /* Ajustez selon le besoin */
-  height: 27%; /* Pour maintenir le ratio de l'image */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  width: 80vw;
+  height: auto;
 }
 
-/* Slider before after image */
+/* SLIDE N°4 */
+
+.titre-page_4_1 {
+  text-align: center;
+  color: #1c6888; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 8vw;
+} 
+
+.titre-page_4_2 {
+  text-align: center;
+  color: #1c6888; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 5vw;
+} 
+
+.image-page_4_1 {
+  height: 30vh;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+.text-page_4_1 {
+  text-align: center;
+  color: #1c6888; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 4vw;
+} 

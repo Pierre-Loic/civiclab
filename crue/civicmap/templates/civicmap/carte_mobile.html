@@ -12,15 +12,20 @@
     <div id="conteneur-carte">
         <div id="carte"></div>
         <div id="titre-mobile">🏄 MétroSurf 🏄<br>Découvrez l’Isère et le Drac comme vous ne les avez jamais vus !</div>
-            <div id="legende">Légende :<br><span style="font-size: 15px;">🔵</span> Station de mesures<br><span style="font-size: 30px;">🏄</span> Repère de crue</div>
+            <div id="legende-mobile">Légende :<br><span style="font-size: 15px;">🔵</span> Station de mesures<br><span style="font-size: 30px;">🏄</span> Repère de crue</div>
     </div>
     
     
     <script>
-        var carte = L.map('carte').setView([45.166672, 5.71667], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        var fondDeCarte = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
-        }).addTo(carte);
+        });
+
+        var carte = L.map('carte', {
+            center: [45.19058736617489, 5.722605074139994],
+            zoom: 13,
+            layers: [fondDeCarte]
+        });
 
         var vigIcon = L.divIcon({
             className: 'point',

@@ -1,15 +1,16 @@
 {% load static %}
 
 <div class="conteneur-image" style="background-image: url('{% static 'civiclapp/page_3.png' %}');">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex flex-column">
         <!-- Première ligne -->
-        <div class="row fill-remaining-space">
-            <div class="col-12 p-3">
-                <div class="text-page_3_1">Crue du pont<br>Saint-Laurent</div>
+        <div class="row">
+            <div class="col-12 p-2">
+                <div class="text-page_3_1">L'isère (part) en Live</div>
+                <div class="text-page_3_1_1">Quel serait le niveau d’eau si on vivait une crue historique ?</div>
             </div>
         </div>
         <!-- Deuxième ligne -->
-        <div class="row fill-remaining-space">
+        <div class="row">
             <div class="col-6 p-3">
                 <div class="text-page_3_2">Scénario<br>habituel<br>👇</div>
             </div>
@@ -18,14 +19,14 @@
             </div>
         </div>
         <!-- Troisième ligne -->
-        <div class="row double-height">
+        <div class="row">
             <div class="col-12 p-3">
                 <iframe class="image-page_3_1" src="{% url 'slider' %}"></iframe>
             </div>
         </div>
         <!-- Quatrième ligne -->
-        <div class="row fill-remaining-space">
-            <div class="col-12 p-3">
+        <div class="row">
+            <div class="col-12 p-2">
                 <div class="text-page_3_3">ℹ️ La photo de la crue a été créée par intelligence artificielle</div>
             </div>
         </div>

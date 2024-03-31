@@ -18,10 +18,16 @@
     
     
     <script>
-        var carte = L.map('carte').setView([45.166672, 5.71667], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+        var fondDeCarte = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
-        }).addTo(carte);
+        });
+
+        var carte = L.map('carte', {
+            center: [45.18859118609017, 5.736724222405038],
+            zoom: 14,
+            layers: [fondDeCarte]
+        });
 
         var vigIcon = L.divIcon({
             className: 'point',
@@ -41,16 +47,18 @@
         });
 
         // Ajouter les repères sur la carte
-        var baseUrl = "{% url 'bootstrap' num='99999' %}".replace('99999', '').replace('//', '/');
+        var baseUrl = "{% url 'home' num='99999' %}".replace('99999', '').replace('//', '/');
         console.log(baseUrl);
         var reperes = JSON.parse('{{reperes|safe}}');
         reperes.forEach(function(repere) {
             var urlComplete = baseUrl + repere.fields.id_gsheet;
-            var iframe = `<iframe src="${urlComplete}" style="height: 400px; width: 200px"></iframe>`;
+            var iframe = `<iframe src="${urlComplete}" style="height: 50vh; width: 40vh"></iframe>`;
             var marker = L.marker([repere.fields.latitude, repere.fields.longitude], {icon: emojiIcon})
         .addTo(carte)
         .bindPopup(iframe, {maxWidth: "auto"});
         });
+
+
     </script>
 </body>
 </html>

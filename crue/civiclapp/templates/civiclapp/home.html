@@ -1,73 +1,32 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏄 MétroSurf 🏄</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="{% static 'civiclapp/style.css' %}">
+    {% if type == "desktop" %}
+      <link rel="stylesheet" href="{% static 'civiclapp/style.css' %}">
+    {% elif type == "mobile" %}
+      <link rel="stylesheet" href="{% static 'civiclapp/style_responsive.css' %}">
+    {% endif %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
+
 <body>
-<!-- Swiper -->
-<div class="swiper mySwiper">
+  <div class="swiper mySwiper">
     <div class="swiper-wrapper">
+      {% for slide in slides %}
       <div class="swiper-slide">
-        <div class="conteneur-image">
-          <img src="{% static 'civiclapp/page_1.png' %}" alt="Page 1" />
-        </div>
+        {% include slide %}
       </div>
-      <div class="swiper-slide">
-        <div class="conteneur-image">
-          <img src="{% static 'civiclapp/page_2.png' %}" alt="Page 2" />
-          <div class="text-page_2_1">L'isère en Live</div>
-          <div class="image-page_2_1">
-            {% include "civiclapp/vigicrue.html" with data=data %}
-          </div>
-          <div class="image-page_2_2">
-            {% include "civiclapp/hauteur.html" %}
-          </div>
-          <div class="image-page_2_3">
-            {% include "civiclapp/debit.html" %}
-          </div>
-          <div class="text-page_2_2">Vous êtes curieux ? 👉</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="conteneur-image">
-          <img src="{% static 'civiclapp/page_3.png' %}" alt="Page 3" />
-          <div class="text-page_3_1">Crue du pont<br>Saint-Laurent</div>
-          <div class="text-page_3_2">Scénario<br>habituel<br>👇</div>
-          <div class="text-page_3_3">Crue<br>historique<br>👇</div>
-          <iframe class="image-page_3_1" src="{% url 'slider' %}"></iframe>
-          <div class="text-page_3_4">ℹ️ La photo de la crue a été créée par intelligence artificielle</div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="conteneur-image">
-          <div>{{ data_repere.presentation_crue }}</div>
-          <img src="{{ data_repere.photo1 }}" alt="Photo 1" />
-          <iframe width="300" height="150" src="{{ data_repere.video1 }}" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <img src="{% static 'civiclapp/page_4.png' %}" alt="Page 4" />
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="conteneur-image">
-          <img src="{% static 'civiclapp/page_5.png' %}" alt="Page 5" />
-          <a href="{% url 'carte' %}">
-            <svg width="300" height="300" class="svg-circle">
-              <circle cx="70" cy="70" r="70" fill="#2d5974" />
-              <text x="70" y="55" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">AILLEURS</text>
-              <text x="70" y="75" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">DANS LA</text>
-              <text x="70" y="95" font-family="Montserrat" font-size="20" fill="#edfb66" text-anchor="middle">METRO</text>
-            </svg>
-          </a>
-        </div>
-      </div>
-      </div>
+      {% endfor %}
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  
   <script>
     var swiper = new Swiper('.mySwiper', {
         direction: 'horizontal',
@@ -78,5 +37,10 @@
         },
       });
   </script>
+
+  <!-- Inclusion de Bootstrap JS et dépendances -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
