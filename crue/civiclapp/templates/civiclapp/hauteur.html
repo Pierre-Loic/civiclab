@@ -1,17 +1,22 @@
 <style>
-    #logo_hauteur {
-        height: 8vh;
+    .logo-hauteur-container {
+        height: 100vh;
     }
-</style>
+    .svg-responsive {
+        width: 50vh; /* Permet au SVG de prendre toute la largeur du conteneur */
+        height: auto; /* Garde l'aspect ratio du SVG */
+    }
+    </style>
+    
 
-<div id="logo_hauteur">
-    <svg width="400" height="1000">
+<div id="logo_hauteur" class="logo-hauteur-container">
+    <svg class="svg-responsive" viewBox="0 0 400 1000">
         <!-- Premier rectangle : fond du limnimètre -->
         <rect x="0" y="0" width="80" height="550" style="fill:#1c6888;"/>
         <rect x="20" y="0" width="40" height="550" style="fill:#07aed8;"/>
         
         <rect x="60" y="105" width="20" height="1" style="fill:#c5c1be;"/>
-        <text x="85" y="110" font-size="15">Crue du 15/11/2023</text>
+        <!-- <text x="85" y="110" font-size="15">Crue du 15/11/2023</text> -->
 
         <rect x="20" y="50" width="40" height="5" style="fill:#e9ff42;"/>
         <text x="45" y="45" font-size="20" style="fill:#e9ff42;">4</text>
@@ -99,7 +104,7 @@
 
         // Générer l'onde sinusoïdale
         for(let x = 0; x <= 80; x += 5) {
-            d += `L ${x},${525 + 5 * Math.sin((x + offset) / 5 * Math.PI / 10)}`;
+            d += 'L ' + x + ',' + ({{ hauteur }} + 5 * Math.sin((x + offset) / 5 * Math.PI / 10));
         }
 
         // Fermer le chemin en descendant au bas du SVG et revenir au point de départ

@@ -32,11 +32,20 @@
 }
 
 .text-page_2_2 {
+  bottom: 10vh;
   text-align: center;
   color: #e9ff42; /* Couleur du texte */
   z-index: 2; /* Assure que le texte est au-dessus de l'image */
   font-size: 8vw;
 } 
+
+.hauteur {
+  height: 80vh;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* SLIDE N°3 */
 
@@ -59,7 +68,7 @@
 .text-page_3_2 {
   text-align: center;
   color: #e9ff42;
-  z-index: 2;
+  z-index: 5;
   font-size: 5vw;
   height: 10vh;
 }
@@ -80,3 +89,37 @@
   width: 85vw;
   height: 35vh;
 }
+
+/* SLIDE N°4 */
+
+.titre-page_4_1 {
+  text-align: center;
+  color: #1c6888; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 8vw;
+} 
+
+.titre-page_4_2 {
+  text-align: center;
+  color: #1c6888; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 5vw;
+} 
+
+.image-page_4_1 {
+  height: auto;
+  width: 80vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+.text-page_4_1 {
+  text-align: left;
+  color: #000; /* Couleur du texte */
+  z-index: 2; /* Assure que le texte est au-dessus de l'image */
+  font-size: 4vw;
+} 
+
+/* SLIDE N°5 */
+

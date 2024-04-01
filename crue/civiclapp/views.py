@@ -18,7 +18,7 @@ def home(request, num):
         data = Vigicrue.objects.get(niveau_alerte=1)
         data_dict = model_to_dict(data)
     # Envoi des noms des templates du slider
-    if data_repere["presentation_crue"]=="":
+    if data_repere["photo1"]=="":
         slides = [
             "civiclapp/slide_2.html",
             "civiclapp/slide_3.html",
@@ -29,7 +29,8 @@ def home(request, num):
         "civiclapp/slide_3.html",
         "civiclapp/slide_4.html",
         ]
-    return render(request, 'civiclapp/home.html', {"type" : "desktop", "data" : data_dict, "data_repere" : data_repere, "slides" : slides, "station" : station})
+    hauteur = int(555 - 555 * (float(station["hauteur"])+1) / 5.5)
+    return render(request, 'civiclapp/home.html', {"type" : "desktop", "data" : data_dict, "data_repere" : data_repere, "slides" : slides, "station" : station, "hauteur" : hauteur})
 
 def mobile(request, num):
     if num is not None:
@@ -45,7 +46,7 @@ def mobile(request, num):
         data = Vigicrue.objects.get(niveau_alerte=1)
         data_dict = model_to_dict(data)
     # Envoi des noms des templates du slider
-    if data_repere["presentation_crue"]=="":
+    if data_repere["photo1"]=="":
         slides = [
             "civiclapp/slide_1.html",
             "civiclapp/slide_2.html",
@@ -60,7 +61,8 @@ def mobile(request, num):
             "civiclapp/slide_4.html",
             "civiclapp/slide_5.html",
         ]
-    return render(request, 'civiclapp/home.html', {"type" : "mobile", "data" : data_dict, "data_repere" : data_repere, "slides" : slides, "station" : station})
+    hauteur = int(555 - 555 * (float(station["hauteur"])+1) / 5.5)
+    return render(request, 'civiclapp/home.html', {"type" : "mobile", "data" : data_dict, "data_repere" : data_repere, "slides" : slides, "station" : station, "hauteur" : hauteur})
 
 @xframe_options_exempt
 def slider(request):
