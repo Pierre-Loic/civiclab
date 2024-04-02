@@ -67,3 +67,7 @@ def mobile(request, num):
 @xframe_options_exempt
 def slider(request):
     return render(request, 'civiclapp/slider.html')
+
+@xframe_options_exempt
+def slider_2(request):
+    return render(request, 'civiclapp/slider_2.html')

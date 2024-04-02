@@ -16,5 +16,8 @@ python manage.py init_reperes_crues
 # Mise à jour de données si nécessaire
 python manage.py update_station
 
+# Démarrer le service cron en arrière-plan
+cron
+
 # Lancez le serveur Django
 exec "$@"

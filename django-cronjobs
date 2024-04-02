@@ -1,0 +1,1 @@
+*/30 * * * * cd /app && python manage.py update_station >> /var/log/cron.log 2>&1

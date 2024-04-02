@@ -4,6 +4,20 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Installer cron
+RUN apt-get update && apt-get install -y cron
+
+# Copier le fichier crontab dans le conteneur
+COPY django-cronjobs /etc/cron.d/django-cronjobs
+
+# Donner les permissions nécessaires et créer le fichier de log
+RUN chmod 0644 /etc/cron.d/django-cronjobs \
+    && touch /var/log/cron.log
+
+# Appliquer le fichier crontab
+RUN crontab /etc/cron.d/django-cronjobs
+
+
 # Mettre à jour pip
 RUN pip install --upgrade pip
 

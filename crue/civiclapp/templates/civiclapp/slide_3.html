@@ -21,7 +21,11 @@
         <!-- Troisième ligne -->
         <div class="row">
             <div class="col-12 p-3">
-                <iframe class="image-page_3_1" src="{% url 'slider' %}"></iframe>
+                {% if data_repere.nom == "Passerelle Saint-Laurent" %}
+                    <iframe class="image-page_3_1" src="{% url 'slider' %}"></iframe>
+                {% else %}
+                    <iframe class="image-page_3_1" src="{% url 'slider-2' %}"></iframe>
+                {% endif %}
             </div>
         </div>
         <!-- Quatrième ligne -->
