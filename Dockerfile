@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM debian:buster-slim
 
 # Définir des variables d'environnement pour Python
 ENV PYTHONDONTWRITEBYTECODE 1
