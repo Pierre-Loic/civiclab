@@ -28,7 +28,7 @@ Ce flux RSS contient les **niveaux de vigilance** Vigicrue par tronçon. Les don
 
 ## 🍪 Cookies
 
-La plateforme n'utilise que des **cookies nécessaires à son fonctionnement**. Il n'y a de de **cookies de traçage publicitaires**.
+La plateforme n'utilise que des **cookies nécessaires à son fonctionnement**. Il n'y a pas de **cookies de traçage publicitaires**.
 
 ## ⚙️ Technologies utilisées
 
