@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11
 
 # Définir des variables d'environnement pour Python
 ENV PYTHONDONTWRITEBYTECODE 1
